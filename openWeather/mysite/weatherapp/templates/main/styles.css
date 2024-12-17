@@ -1,0 +1,155 @@
+/* General Reset */
+body {
+    background: linear-gradient(to bottom, #f0f4f8, #d1e0e6); /* Soft gradient with a lighter touch */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background: linear-gradient(to right, #007BFF, #004085);
+    color: white;
+}
+i {
+    color: #ffc107; /* Yellow color */
+    font-size: 24px; /* Adjust the size */
+    margin-right: 8px; /* Add spacing */
+}
+
+
+/* Header Section */
+.custom-header {
+    background: linear-gradient(to right, #6a82fb, #fc5c7d); /* Smooth vibrant gradient */
+    color: white;
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Search Form */
+.search-form .form-control {
+    border-radius: 25px 0 0 25px; /* More rounded input */
+    padding-left: 20px;
+    border: 2px solid #4facfe;
+    transition: all 0.3s ease;
+}
+
+.search-form .form-control:focus {
+    border-color: #fc5c7d;
+    box-shadow: 0 0 5px rgba(252, 92, 125, 0.8);
+}
+
+.search-form .btn {
+    border-radius: 0 25px 25px 0;
+    background-color: #4facfe;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.search-form .btn:hover {
+    background-color: #fc5c7d;
+}
+
+/* Weather Card */
+.custom-card {
+    background: linear-gradient(to bottom, #6a82fb, #fc5c7d); /* Smooth gradient with vibrant colors */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    color: rgb(231, 147, 147);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card h4 {
+    margin: 20px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.custom-card img {
+    max-width: 100px;
+    margin-top: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .custom-header {
+        padding: 30px 15px;
+    }
+
+    .custom-card {
+        padding: 15px;
+    }
+
+    .search-form .form-control,
+    .search-form .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}   
+/* Weather Summary Section */
+.weather-summary {
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-top: 2px solid #007bff;
+    border-bottom: 2px solid #007bff;
+    margin: 20px 0;
+}
+
+.weather-summary h2 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.weather-summary p {
+    color: #6c757d;
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.weather-summary .col-md-3 p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 5px;
+}   
+/* Footer Styling */
+footer {
+    padding: 10px 0;
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer a {
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #007bff;
+}
