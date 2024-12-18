@@ -8,101 +8,105 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
         integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
         crossorigin="anonymous" />
-    <title>My Weather App</title>
+    <title>ClimaSphere - Weather App</title>
     <!-- Feather Icons CDN -->
     <script src="https://unpkg.com/feather-icons"></script>
-
 </head>
 
 <body>
-    <!-- Header -->
-    <h1>ClimaSphere</h1>
-    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <div class="container">
-            <a href="../" class="navbar-brand">
-                <i data-feather="cloud-lightning" class="custom-icon" color="red"></i>Weather App <span style="color: rgb(39, 117, 161);"> <strong> - Explore Global Weather Conditions
-                        </strong>
-                </span> </a>
-            <a href="https://openweathermap.org" class="navbar-tech">OpenWeather - Get Your API</a>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-
-    <br /><br /> <br>
-    <div id="jumbotron" class="jumbotron" style="text-align: center; margin-top:-50px">
-        <h1 class="display-5"> ClimaSphere </h1>
-        <h5>Your Personalized Weather Guru</h5>
-
-        <!-- <img src="{% static 'images/weather.png' %}" class="image" style="width:100px; margin-bottom:-50px; "> -->
-    </div>
-
-    <!-- Weather Summary Section -->
-    <section class="weather-summary text-center">
-        <h2>Why Choose ClimaSphere?</h2>
-        <p class="lead">Your ultimate weather guide for accurate forecasts, temperatures, and real-time conditions.</p>
-        <div class="row justify-content-center">
-            <div class="col-md-3">
-                <i data-feather="sun" class="summary-icon" color="red"></i>
-                <p>Accurate Temperatures</p>
-            </div>
-            <div class="col-md-3">
-                <i data-feather="cloud" class="summary-icon" color="red"></i>
-                <p>Cloud Coverage Details</p>
-            </div>
-            <div class="col-md-3">
-                <i data-feather="map-pin" class="summary-icon" color="red"></i>
-                <p>Coordinates</p>
+    <div class="d-flex flex-column min-vh-100">
+        <!-- Header -->
+        
+        <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+            <div class="container">
+                <a href="../" class="navbar-brand">
+                    <i data-feather="cloud-lightning" class="custom-icon" color="red"></i>Weather App <span style="color: rgb(39, 117, 161);"> <strong>- Explore Global Weather Conditions</strong></span>
+                </a>
+                <a href="https://openweathermap.org" class="navbar-tech">OpenWeather - Get Your API</a>
             </div>
         </div>
-    </section>
 
-    <!-- Search Form -->
+        <!-- Jumbotron -->
+        <div id="jumbotron" class="jumbotron text-center mt-5 pt-5">
+            <h1 class="display-5">ClimaSphere</h1>
+            <h5>Your Personalized Weather Guru</h5>
+        </div> 
+        
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <form method="post" class="col-md"">
-          {% csrf_token %}
-          <div class=" input-group">
-
-            <input type="text" class="form-control" name="city" placeholder="Choose Your City ...">
-            <div class="input-group-btn">
-                <button type="submit" class="btn btn-primary">Search</button>
+        <!-- Weather Summary Section -->
+        <section class="weather-summary text-center">
+            <h2>Why Choose ClimaSphere?</h2>
+            <p class="lead">Your ultimate weather guide for accurate forecasts, temperatures, and real-time conditions.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <i data-feather="sun" class="summary-icon" color="red"></i>
+                    <p>Accurate Temperatures</p>
+                </div>
+                <div class="col-md-3">
+                    <i data-feather="cloud" class="summary-icon" color="red"></i>
+                    <p>Cloud Coverage Details</p>
+                </div>
+                <div class="col-md-3">
+                    <i data-feather="map-pin" class="summary-icon" color="red"></i>
+                    <p>GPS Coordinates</p>
+                </div>
             </div>
-            </div>
-            <form>
-    </nav>
-    <br> <br>
-    <!-- Weather Results -->
+        </section>
 
-    <div class="row">
-        {% if country_code and coordinate and temp and pressure and humidity %}
-        <div class="col d-flex justify-content-center" ">
-          <div class=" custom-card text-white bg-light mb-6">
-            <div class=" card-body">
-                <h4><span class="badge badge-primary">Country Code :</span> {{country_code}}</h4>
-                <h4><span class="badge badge-primary">Coordinates [X,Y] :</span> {{coordinate}}</h4>
-                <h4><span class="badge badge-primary">Degrees Celsius :</span> {{temp}}</h4>
-                <h4><span class="badge badge-primary">Pressure :</span> {{pressure}} </h4>
-                <h4><span class="badge badge-primary">Humidity : </span> {{humidity}}</h4>
-                <h4><span class="badge badge-primary">Forecast : </span> {{main}} <img
-                        src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image" style="width:70px"></h4>
-                <h4><span class="badge badge-primary">Description : </span> {{description}}</h4>
+        <!-- Weather Tips Section -->
+<section class="weather-tips text-center mt-4">
+    <h3>Weather Tips</h3>
+    <p class="lead">
+        🌦 Always carry an umbrella during unpredictable weather. Stay updated with accurate forecasts using ClimaSphere!
+    </p>
+</section>
+
+        <!-- Search Form -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <form method="post" class="w-100">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" name="city" placeholder="Choose Your City ...">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+
+        <!-- Weather Results -->
+        <div class="row justify-content-center my-4">
+            {% if country_code and coordinate and temp and pressure and humidity %}
+            <div class="col-md-6">
+                <div class="custom-card text-white bg-light mb-6">
+                    <div class="card-body">
+                        <h4><span class="badge badge-primary">Country Code :</span> {{country_code}}</h4>
+                        <h4><span class="badge badge-primary">Coordinates [X,Y] :</span> {{coordinate}}</h4>
+                        <h4><span class="badge badge-primary">Degrees Celsius :</span> {{temp}}</h4>
+                        <h4><span class="badge badge-primary">Pressure :</span> {{pressure}}</h4>
+                        <h4><span class="badge badge-primary">Humidity :</span> {{humidity}}</h4>
+                        <h4><span class="badge badge-primary">Forecast :</span> {{main}}
+                            <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image" style="width:70px">
+                        </h4>
+                        <h4><span class="badge badge-primary">Description :</span> {{description}}</h4>
+                    </div>
+                </div>
             </div>
             {% endif %}
         </div>
 
         <!-- Footer -->
-    <footer class="text-center mt-5"><b>
-        <p>&copy; 2024 ClimaSphere. Powered by <a href="https://openweathermap.org" target="_blank">OpenWeather</a></p></b>
-    </footer>
+        <footer class="mt-auto text-center py-3 bg-dark text-white">
+            <p><b>&copy; 2024 ClimaSphere. Powered by <a href="https://openweathermap.org" target="_blank" class="text-info">OpenWeather</a></b></p>
+        </footer>
+    </div>
 
-         <!-- Initialize Feather Icons AFTER the DOM has fully loaded -->
+    <!-- Initialize Feather Icons -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
         });
     </script>
-        
 </body>
 
 </html>

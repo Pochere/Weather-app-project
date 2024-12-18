@@ -1,155 +1,117 @@
 /* General Reset */
-body {
-    background: linear-gradient(to bottom, #f0f4f8, #d1e0e6); /* Soft gradient with a lighter touch */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #444;
+body, html {
     margin: 0;
     padding: 0;
-}
-.navbar {
-    background: linear-gradient(to right, #007BFF, #004085);
-    color: white;
-}
-i {
-    color: #ffc107; /* Yellow color */
-    font-size: 24px; /* Adjust the size */
-    margin-right: 8px; /* Add spacing */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #f0f4f8, #d1e0e6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
 }
 
-
-/* Header Section */
-.custom-header {
-    background: linear-gradient(to right, #6a82fb, #fc5c7d); /* Smooth vibrant gradient */
+.jumbotron {
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #6a82fb, #fc5c7d);
     color: white;
-    padding: 50px 20px;
     border-radius: 15px;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.custom-header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* Search Form */
-.search-form .form-control {
-    border-radius: 25px 0 0 25px; /* More rounded input */
-    padding-left: 20px;
-    border: 2px solid #4facfe;
-    transition: all 0.3s ease;
-}
-
-.search-form .form-control:focus {
-    border-color: #fc5c7d;
-    box-shadow: 0 0 5px rgba(252, 92, 125, 0.8);
-}
-
-.search-form .btn {
-    border-radius: 0 25px 25px 0;
-    background-color: #4facfe;
-    color: white;
-    font-weight: bold;
-    padding: 12px 20px;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.search-form .btn:hover {
-    background-color: #fc5c7d;
-}
-
-/* Weather Card */
-.custom-card {
-    background: linear-gradient(to bottom, #6a82fb, #fc5c7d); /* Smooth gradient with vibrant colors */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    color: rgb(231, 147, 147);
-    text-align: center;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.custom-card h4 {
-    margin: 20px 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.custom-card img {
-    max-width: 100px;
-    margin-top: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Improvements */
-@media (max-width: 768px) {
-    .custom-header {
-        padding: 30px 15px;
-    }
-
-    .custom-card {
-        padding: 15px;
-    }
-
-    .search-form .form-control,
-    .search-form .btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}   
-/* Weather Summary Section */
 .weather-summary {
     padding: 40px 20px;
-    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #eef2f3, #d9e8f5);
     border-top: 2px solid #007bff;
     border-bottom: 2px solid #007bff;
     margin: 20px 0;
 }
 
-.weather-summary h2 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #343a40;
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.weather-summary p {
-    color: #6c757d;
+.custom-card {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
 }
 
 .summary-icon {
     width: 50px;
     height: 50px;
+}
+
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 1.5rem 1rem;
+    }
+}
+.weather-tips {
+    background-color: #f0f9ff; /* Light blue background */
+    border: 1px solid #d9eaf7; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    margin: 20px auto; /* Spacing around the section */
+    max-width: 800px; /* Center and limit the width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.weather-tips h3 {
+    color: #007bff; /* Make the heading blue */
+    font-weight: bold; /* Bold heading */
     margin-bottom: 10px;
 }
 
-.weather-summary .col-md-3 p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-top: 5px;
+.weather-tips p {
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #333; /* Darker text for readability */
 }   
-/* Footer Styling */
-footer {
-    padding: 10px 0;
-    background-color: #343a40;
-    color: #fff;
+/* Search Bar Container */
+.search-bar {
+    max-width: 600px; /* Restrict width to align nicely */
+    margin: 0 auto; /* Center the search bar */
 }
 
-footer a {
-    color: #17a2b8;
-    text-decoration: none;
+/* Input Group Styling */
+.input-group {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensure rounded effect works well */
 }
 
-footer a:hover {
-    color: #007bff;
+/* Input Field Styling */
+.input-group .form-control {
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Add spacing inside input */
+    font-size: 1rem; /* Slightly larger text */
 }
+
+/* Search Icon Styling */
+.input-group-text {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White icon */
+    border: none; /* Remove default border */
+    padding: 10px; /* Add spacing for better appearance */
+}
+
+/* Search Button Styling */
+.input-group-btn .btn {
+    border-radius: 0; /* Square edges to match input */
+    background-color: #007bff; /* Primary blue */
+    border: none; /* Remove border */
+    color: #fff; /* White text */
+    font-size: 1rem; /* Readable font size */
+    padding: 10px 20px; /* Add spacing */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.input-group-btn .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
